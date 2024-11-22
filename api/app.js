@@ -1,7 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import { connections } from 'mongoose';
-import mongoose from './config/db-connection.js';
 import teamRoutes from './routes/teamRoutes.js';
 import playerRoutes from './routes/playerRoutes.js';
 

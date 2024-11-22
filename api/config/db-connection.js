@@ -1,10 +1,17 @@
 import mongoose from "mongoose";
 
+require('dotenv').config();
+
+const mongoose = require('mongoose');
+
 const connect = () => {
-    mongoose.connect(
-        `mongodb+srv://jaobarreto:admin@cluster0.uvi1h.mongodb.net/API-FutebolBrasileiro?retryWrites=true&w=majority&appName=Cluster0`
-    )
-}
+    mongoose.connect(process.env.MONGO_URI)
+        .then(() => console.log('Conectado ao MongoDB'))
+        .catch(err => console.error('Erro ao conectar ao MongoDB:', err));
+};
+
+connect();
+
 
 const connection = mongoose.connection;
 
